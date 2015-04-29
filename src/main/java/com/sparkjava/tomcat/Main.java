@@ -6,7 +6,7 @@ import spark.servlet.SparkApplication;
 public class Main implements SparkApplication {
 	
 	public void init() {
-		get("/", (request, response) -> {
+		get("/hello", (request, response) -> {
 			return "Ok, Success";
 		});
 	}
