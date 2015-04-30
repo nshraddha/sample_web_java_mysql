@@ -14,7 +14,7 @@ public class Main implements SparkApplication {
         System.setProperty("norm.password", "cloudmunch");
 		
 		SparkApplication app = new Main();
-		app.init();		
+		app.init();
 	}
 
 	public void init(){
