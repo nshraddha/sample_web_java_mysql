@@ -16,7 +16,6 @@ repositories {
     mavenCentral()
 }
 
-
 configurations {
     testCompile.extendsFrom runtime
     testRuntime.extendsFrom unitTestCompile
@@ -52,3 +51,5 @@ uploadArchives {
        }
     }
 }
+
+check.DependsOn test
