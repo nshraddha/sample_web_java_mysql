@@ -16,17 +16,33 @@ repositories {
     mavenCentral()
 }
 
+
+configurations {
+    testCompile.extendsFrom runtime
+    testRuntime.extendsFrom unitTestCompile
+}
+
 dependencies {
     compile 'com.sparkjava:spark-core:2.1'
     compile 'org.mockito:mockito-all:2.0.2-beta'
     compile 'com.j256.ormlite:ormlite-jdbc:4.48'
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'mysql:mysql-connector-java:5.1.35'
+    
+    testCompile files("$project.buildDir/classes/release")
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
-test {
-    systemProperties 'property': 'value'
+sourceSets {
+    test {
+        java.srcDir file('src/test')
+    }
+}
+
+task unitTest(type:Test, dependsOn: assemble) {
+    description = "run unit tests"
+    testClassesDir = project.sourceSets.test.output.classesDir
+    classpath = project.sourceSets.test.runtimeClasspath
 }
 
 uploadArchives {
