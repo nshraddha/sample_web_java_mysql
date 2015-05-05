@@ -38,12 +38,6 @@ sourceSets {
     }
 }
 
-task unitTest(type:Test, dependsOn: assemble) {
-    description = "run unit tests"
-    testClassesDir = project.sourceSets.test.output.classesDir
-    classpath = project.sourceSets.test.runtimeClasspath
-}
-
 uploadArchives {
     repositories {
        flatDir {
@@ -51,5 +45,3 @@ uploadArchives {
        }
     }
 }
-
-check.DependsOn test
