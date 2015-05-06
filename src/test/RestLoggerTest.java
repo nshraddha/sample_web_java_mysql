@@ -16,6 +16,9 @@ import static org.mockito.Mockito.when;
  * Unit test for simple App.
  */
 public class RestLoggerTest {
+    private String appName = "RestLogger";
+    private String message = "Test Message";
+
     @Test
     public final void echo_returnsSameString_returnsSameString() throws SQLException {
         RestLogger restLogger = new RestLogger();
@@ -33,8 +36,8 @@ public class RestLoggerTest {
         IDataAccess da = mock(IDataAccess.class);
         LogMessage logMessage = new LogMessage();
 
-        logMessage.setAppName("RestLogger");
-        logMessage.setMessage("Test Message");
+        logMessage.setAppName(appName);
+        logMessage.setMessage(message);
         logMessage.setLevel(LogLevels.INFO.toString());
 
         when(da.insertLogMessage(Mockito.anyObject())).thenReturn(true);
@@ -53,8 +56,8 @@ public class RestLoggerTest {
         IDataAccess da = mock(IDataAccess.class);
         LogMessage logMessage = new LogMessage();
 
-        logMessage.setAppName("RestLogger");
-        logMessage.setMessage("Test Message");
+        logMessage.setAppName(appName);
+        logMessage.setMessage(message);
         logMessage.setLevel(LogLevels.WARN.toString());
         
         System.out.println(da.toString());
@@ -75,8 +78,8 @@ public class RestLoggerTest {
         IDataAccess da = mock(IDataAccess.class);
         LogMessage logMessage = new LogMessage();
 
-        logMessage.setAppName("RestLogger");
-        logMessage.setMessage("Test Message");
+        logMessage.setAppName(appName);
+        logMessage.setMessage(message);
         logMessage.setLevel(LogLevels.ERROR.toString());
 
         when(da.insertLogMessage(logMessage)).thenReturn(true);
@@ -95,8 +98,8 @@ public class RestLoggerTest {
         IDataAccess da = mock(IDataAccess.class);
         LogMessage logMessage = new LogMessage();
 
-        logMessage.setAppName("RestLogger");
-        logMessage.setMessage("Test Message");
+        logMessage.setAppName(appName);
+        logMessage.setMessage(message);
         logMessage.setLevel(LogLevels.FATAL.toString());
 
         when(da.insertLogMessage(logMessage)).thenReturn(true);
