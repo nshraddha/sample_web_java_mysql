@@ -1,6 +1,7 @@
-package com.cloudmunch.javademo;
-
-import org.junit.BeforeClass;
+import com.cloudmunch.javademo.IDataAccess;
+import com.cloudmunch.javademo.LogLevels;
+import com.cloudmunch.javademo.LogMessage;
+import com.cloudmunch.javademo.RestLogger;
 import org.junit.Test;
 import org.mockito.Mockito;
 
