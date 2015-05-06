@@ -18,6 +18,8 @@ import static org.mockito.Mockito.when;
 public class RestLoggerTest {
     private String appName = "RestLogger";
     private String message = "Test Message";
+    private String jsonPayload = "{ \"appName\": \"RestLogger\"," +
+            " \"message\": \"Test Message\" }";
 
     @Test
     public final void echo_returnsSameString_returnsSameString() throws SQLException {
@@ -44,8 +46,7 @@ public class RestLoggerTest {
 
         RestLogger restLogger = new RestLogger(da);
 
-        Boolean returned = restLogger.info("{ \"appName\": \"RestLogger\"," +
-                " \"message\": \"Test Message\" }");
+        Boolean returned = restLogger.info(jsonPayload);
 
         assertTrue(returned);
     }
@@ -66,8 +67,7 @@ public class RestLoggerTest {
 
         RestLogger restLogger = new RestLogger(da);
 
-        Boolean returned = restLogger.info("{ \"appName\": \"RestLogger\"," +
-                " \"message\": \"Test Message\" }");
+        Boolean returned = restLogger.warn(jsonPayload);
 
         assertTrue(returned);
     }
@@ -86,8 +86,7 @@ public class RestLoggerTest {
 
         RestLogger restLogger = new RestLogger(da);
 
-        Boolean returned = restLogger.info("{ \"appName\": \"RestLogger\", " +
-                " \"message\": \"Test Message\" }");
+        Boolean returned = restLogger.error(jsonPayload);
 
         assertTrue(returned);
     }
@@ -106,8 +105,7 @@ public class RestLoggerTest {
 
         RestLogger restLogger = new RestLogger(da);
 
-        Boolean returned = restLogger.info("{ \"appName\": \"RestLogger\", " +
-                " \"message\": \"Test Message\" }");
+        Boolean returned = restLogger.fatal(jsonPayload);
 
         assertTrue(returned);
     }
