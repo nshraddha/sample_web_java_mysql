@@ -32,8 +32,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
-task buildAndTest {
-    dependsOn test, build
+task produce {
+    dependsOn test, build, jar, war
 }
 
 
