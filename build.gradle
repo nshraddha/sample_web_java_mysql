@@ -32,11 +32,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
-task produce {
-    dependsOn testClasses, build, jar, war
-}
-
-
 sourceSets {
     test {
         java.srcDir file('src/test')
