@@ -33,7 +33,7 @@ dependencies {
 }
 
 task produce {
-    dependsOn test, build, jar, war
+    dependsOn testClasses, build, jar, war
 }
 
 
