@@ -1,3 +1,2 @@
-Did it ever occur to you that fat chance and slim chance mean the same thing?
-
-Or that we drive on parkways and park on driveways?
+Economists are still trying to figure out why the girls with the least
+principle draw the most interest.
