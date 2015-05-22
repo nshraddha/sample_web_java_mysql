@@ -1,2 +1,1 @@
-If you look like your driver's license photo -- see a doctor.
-If you look like your passport photo -- it's too late for a doctor.
+The older a man gets, the farther he had to walk to school as a boy.
