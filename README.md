@@ -1,2 +1,2 @@
-Economists are still trying to figure out why the girls with the least
-principle draw the most interest.
+If you look like your driver's license photo -- see a doctor.
+If you look like your passport photo -- it's too late for a doctor.
