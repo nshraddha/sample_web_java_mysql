@@ -2,46 +2,29 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'war'
 
-println System.getProperty("java.home")
-
-sourceCompatibility = 1.8
-version = '1.0'
-jar {
-    manifest {
-        attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
-    }
-}
-
 repositories {
     mavenCentral()
 }
 
-configurations {
-    testCompile.extendsFrom runtime
-    testRuntime.extendsFrom unitTestCompile
-}
-
 dependencies {
-    compile 'com.sparkjava:spark-core:2.1'
-    compile 'org.mockito:mockito-all:2.0.2-beta'
-    compile 'com.j256.ormlite:ormlite-jdbc:4.48'
-    compile 'com.google.code.gson:gson:2.3.1'
-    compile 'mysql:mysql-connector-java:5.1.35'
-    
-    testCompile files("$project.buildDir/classes/release")
-    testCompile group: 'junit', name: 'junit', version: '4.+'
+	compile "javax.ws.rs:jsr311-api:1.1.1"
+
+	compile 'com.sun.jersey:jersey-server:1.16'
+	compile 'com.sun.jersey:jersey-core:1.16'
+	compile 'com.sun.jersey:jersey-client:1.16'
+	compile 'com.sun.jersey:jersey-servlet:1.16'
+	compile 'com.sun.jersey:jersey-json:1.16'
+	
+	compile 'com.yammer.metrics:metrics-core:2.2.0'
+	compile 'com.yammer.metrics:metrics-servlet:2.2.0'
+	compile 'com.yammer.metrics:metrics-jersey:2.2.0'
+	compile 'com.yammer.metrics:metrics-graphite:2.2.0'
+	
+	compile 'log4j:log4j:1.2.16'
+
+	testCompile "junit:junit-dep:4.10"
 }
 
-sourceSets {
-    test {
-        java.srcDir file('src/test')
-    }
-}
-
-uploadArchives {
-    repositories {
-       flatDir {
-           dirs 'repos'
-       }
-    }
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
 }
