@@ -22,6 +22,6 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.11'
 }
 
-tasks.withType(war) {
+tasks.withType(War) {
     include 'index.html'
 }
